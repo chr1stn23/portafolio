@@ -1,0 +1,111 @@
+<section id="sobre-mi" class="section about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__visual" appReveal>
+        <div class="about__portrait">
+          @if (profile.avatarUrl) {
+            <img
+              class="about__photo"
+              [src]="profile.avatarUrl"
+              [alt]="'Fotografía de ' + profile.name"
+              loading="lazy"
+            />
+          } @else {
+            <span class="about__monogram" aria-hidden="true">{{ profile.logo }}</span>
+          }
+          <span class="about__portrait-ring" aria-hidden="true"></span>
+          <span class="about__portrait-grid" aria-hidden="true"></span>
+        </div>
+
+        <div class="about__badge about__badge--a">
+          <span class="about__badge-value">97%</span>
+          <span class="about__badge-label">Cobertura frontend</span>
+        </div>
+
+        <div class="about__badge about__badge--b">
+          <span class="about__badge-icon">
+            <app-icon name="globe" [size]="16" />
+          </span>
+          <div>
+            <span class="about__badge-value">B2</span>
+            <span class="about__badge-label">Inglés intermedio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__content" appReveal [delay]="120">
+        <app-section-heading
+          headingId="about-title"
+          [eyebrow]="section.eyebrow"
+          [title]="section.title"
+          [highlight]="section.highlight"
+          [center]="false"
+          [compact]="true"
+        />
+
+        @for (paragraph of profile.bio; track $index) {
+          <p class="about__text">{{ paragraph }}</p>
+        }
+
+        <ul class="check-list about__highlights">
+          @for (highlight of profile.highlights; track highlight) {
+            <li>
+              <app-icon name="check" [size]="16" />
+              <span>{{ highlight }}</span>
+            </li>
+          }
+        </ul>
+
+        <div class="about__actions">
+          <a class="btn btn--primary" href="#contacto">
+            Contrátame
+            <app-icon name="arrow-right" [size]="16" />
+          </a>
+          <a class="btn btn--ghost" [href]="profile.cvUrl" download>
+            Descargar CV
+            <app-icon name="download" [size]="16" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="about__skills" appReveal role="group" aria-labelledby="about-skills-title">
+      <h3 class="about__skills-title" id="about-skills-title">Stack y nivel de dominio</h3>
+
+      <div class="about__skills-grid">
+        @for (skill of skills; track skill.name) {
+          <div class="skill">
+            <div class="skill__head">
+              <span>{{ skill.name }}</span>
+              <span class="skill__value">{{ skill.level }}%</span>
+            </div>
+            <div
+              class="skill__bar"
+              role="progressbar"
+              [attr.aria-label]="skill.name"
+              [attr.aria-valuenow]="skill.level"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <span class="skill__fill" [style.--level]="skill.level + '%'"></span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="stats-grid" appReveal>
+      @for (stat of stats; track stat.label) {
+        <article class="stat-card card">
+          <span class="stat-card__icon">
+            <app-icon [name]="stat.icon" [size]="20" />
+          </span>
+          <div class="stat-card__value">
+            <app-stat-counter [value]="stat.value" [suffix]="stat.suffix" />
+          </div>
+          <p class="stat-card__label">{{ stat.label }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

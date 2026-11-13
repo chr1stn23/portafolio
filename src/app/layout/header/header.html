@@ -1,0 +1,69 @@
+<header
+  class="site-header"
+  [class.site-header--scrolled]="scrolled()"
+  (keydown.escape)="onEscape()"
+>
+  <div class="container site-header__inner">
+    <a class="brand" href="#inicio" (click)="closeMenu()" aria-label="Ir al inicio">
+      <span class="brand__mark" aria-hidden="true">{{ profile.logo }}</span>
+      <span class="brand__name">{{ profile.name }}<span class="brand__dot">.</span></span>
+    </a>
+
+    <nav
+      id="menu-principal"
+      class="site-nav"
+      [class.site-nav--open]="menuOpen()"
+      aria-label="Navegación principal"
+    >
+      <ul class="site-nav__list">
+        @for (link of navLinks; track link.fragment) {
+          <li>
+            <a
+              [href]="'#' + link.fragment"
+              [class.is-active]="activeFragment() === link.fragment"
+              [attr.aria-current]="activeFragment() === link.fragment ? 'location' : null"
+              (click)="closeMenu()"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+
+      <a class="btn btn--primary site-nav__cta" href="#contacto" (click)="closeMenu()">
+        Contrátame
+        <app-icon name="arrow-up-right" [size]="16" />
+      </a>
+    </nav>
+
+    <div class="site-header__actions">
+      <button
+        type="button"
+        class="icon-btn"
+        (click)="theme.toggle()"
+        [attr.aria-label]="theme.isDark() ? 'Activar tema claro' : 'Activar tema oscuro'"
+        [attr.title]="theme.isDark() ? 'Tema claro' : 'Tema oscuro'"
+      >
+        <app-icon [name]="theme.isDark() ? 'sun' : 'moon'" [size]="18" />
+      </button>
+
+      <a class="btn btn--primary header-cta" href="#contacto">
+        Contrátame
+        <app-icon name="arrow-up-right" [size]="16" />
+      </a>
+
+      <button
+        type="button"
+        class="icon-btn menu-toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="menu-principal"
+        [attr.aria-label]="menuOpen() ? 'Cerrar menú' : 'Abrir menú'"
+      >
+        <app-icon [name]="menuOpen() ? 'close' : 'menu'" [size]="20" />
+      </button>
+    </div>
+  </div>
+
+  <div class="site-header__progress" [style.width.%]="progress()" aria-hidden="true"></div>
+</header>

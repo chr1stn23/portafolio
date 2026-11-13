@@ -1,0 +1,119 @@
+<section id="inicio" class="section hero" aria-labelledby="hero-title">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="pill pill--live" appReveal>
+        <span class="pill__dot" aria-hidden="true"></span>
+        {{ profile.availability }}
+      </span>
+
+      <h1 id="hero-title" class="hero__title" appReveal [delay]="80">
+        Hola, soy
+        <span class="gradient-text">{{ profile.name }}</span>
+      </h1>
+
+      <p class="hero__role" appReveal [delay]="140">
+        <span class="sr-only">{{ profile.heroRoles[0] }}</span>
+        <span class="hero__role-typed" aria-hidden="true">
+          <span class="hero__prompt">&gt;</span>
+          <span class="hero__typed">{{ typedRole() }}</span>
+          <span class="hero__caret"></span>
+        </span>
+      </p>
+
+      <p class="hero__description" appReveal [delay]="200">
+        {{ profile.heroDescription }}
+      </p>
+
+      <ul class="hero__stack" appReveal [delay]="260" aria-label="Tecnologías principales">
+        @for (tech of profile.heroStack; track tech) {
+          <li class="chip">{{ tech }}</li>
+        }
+      </ul>
+
+      <div class="hero__actions" appReveal [delay]="320">
+        <a class="btn btn--primary" href="#proyectos">
+          Ver mis proyectos
+          <app-icon name="arrow-right" [size]="17" />
+        </a>
+        <a class="btn btn--ghost" href="#contacto">
+          Hablemos
+          <app-icon name="send" [size]="16" />
+        </a>
+      </div>
+
+      <div class="hero__footer" appReveal [delay]="380">
+        <div class="hero__social">
+          <span class="hero__social-label">Sígueme</span>
+          <app-social-links label="Redes sociales" />
+        </div>
+
+        <span class="hero__divider" aria-hidden="true"></span>
+
+        <div class="hero__mini-stats">
+          @for (stat of heroStats; track stat.label) {
+            <div class="hero__mini-stat">
+              <app-stat-counter [value]="stat.value" [suffix]="stat.suffix" />
+              <span>{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__visual" appReveal [delay]="200">
+      <div class="hero__visual-inner">
+        <div class="hero__glow" aria-hidden="true"></div>
+
+        <article class="hero__card" aria-label="Presentación en formato de código">
+          <header class="hero__card-bar">
+            <span class="dot dot--red" aria-hidden="true"></span>
+            <span class="dot dot--yellow" aria-hidden="true"></span>
+            <span class="dot dot--green" aria-hidden="true"></span>
+            <code>desarrollador.ts</code>
+          </header>
+
+          <pre
+            class="hero__code"
+          ><code><span class="c-key">const</span> <span class="c-var">developer</span> <span class="c-op">=</span> <span class="c-punc">{{ '{' }}</span>
+  <span class="c-prop">nombre</span>: <span class="c-str">'{{ profile.name }}'</span>,
+  <span class="c-prop">rol</span>: <span class="c-str">'Full-Stack'</span>,
+  <span class="c-prop">stack</span>: [<span class="c-str">'Angular'</span>, <span class="c-str">'Spring Boot'</span>],
+  <span class="c-prop">pasión</span>: <span class="c-num">Infinity</span>,
+<span class="c-punc">{{ '}' }}</span></code></pre>
+
+          <footer class="hero__card-footer">
+            <span class="hero__status">
+              <span class="hero__status-dot" aria-hidden="true"></span>
+              Disponible para trabajar
+            </span>
+            <span class="hero__card-tag">v2026</span>
+          </footer>
+        </article>
+
+        <div class="hero__float hero__float--a">
+          <span class="hero__float-icon">
+            <app-icon name="rocket" [size]="18" />
+          </span>
+          <div>
+            <strong>Full-Stack</strong>
+            <span>Angular + Spring Boot</span>
+          </div>
+        </div>
+
+        <div class="hero__float hero__float--b">
+          <span class="hero__float-icon hero__float-icon--star">
+            <app-icon name="shield-check" [size]="18" />
+          </span>
+          <div>
+            <strong>97%</strong>
+            <span>Cobertura frontend</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#sobre-mi" aria-label="Bajar a la sección sobre mí">
+    <app-icon name="arrow-down" [size]="18" />
+  </a>
+</section>

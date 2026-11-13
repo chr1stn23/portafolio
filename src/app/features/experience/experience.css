@@ -1,0 +1,115 @@
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.2rem;
+  max-width: 58rem;
+  margin-inline: auto;
+  padding-left: 2rem;
+  list-style: none;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  left: 0.75rem;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    var(--primary),
+    color-mix(in srgb, var(--pink) 70%, transparent)
+  );
+  opacity: 0.55;
+}
+
+.timeline__item {
+  position: relative;
+}
+
+.timeline__dot {
+  position: absolute;
+  top: 1.65rem;
+  left: -1.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--gradient);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 16%, transparent);
+}
+
+.timeline__card {
+  display: grid;
+  gap: 0.9rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.timeline__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.timeline__head h3 {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.timeline__company {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.timeline__period {
+  flex-shrink: 0;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+}
+
+.timeline__bullets {
+  margin-top: 0.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--border);
+}
+
+.timeline__bullets li {
+  align-items: flex-start;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.timeline__bullets app-icon {
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 620px) {
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline::before {
+    left: 0.45rem;
+  }
+
+  .timeline__dot {
+    top: 1.35rem;
+    left: -1.4rem;
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+
+  .timeline__period {
+    font-size: 0.68rem;
+  }
+}

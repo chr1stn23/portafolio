@@ -1,0 +1,93 @@
+<section id="proyectos" class="section projects" aria-labelledby="projects-title">
+  <div class="container">
+    <app-section-heading
+      headingId="projects-title"
+      [eyebrow]="section.eyebrow"
+      [title]="section.title"
+      [highlight]="section.highlight"
+      [subtitle]="section.subtitle"
+    />
+
+    <div class="filters" role="group" aria-label="Filtrar proyectos por categoría">
+      @for (category of categories; track category) {
+        <button
+          type="button"
+          class="filter"
+          [class.filter--active]="activeCategory() === category"
+          [attr.aria-pressed]="activeCategory() === category"
+          (click)="setCategory(category)"
+        >
+          {{ category }}
+          <span class="filter__count">{{ countFor(category) }}</span>
+        </button>
+      }
+    </div>
+
+    <div class="projects__grid">
+      @for (project of filtered(); track project.id; let index = $index) {
+        <article class="project-card card card--interactive" appReveal [delay]="index * 60">
+          <div class="project-card__cover" [style.background]="project.gradient">
+            @if (project.image) {
+              <img
+                class="project-card__image"
+                [src]="project.image"
+                [alt]="'Captura del proyecto ' + project.title"
+                loading="lazy"
+              />
+            } @else {
+              <span class="project-card__icon">
+                <app-icon [name]="project.icon" [size]="42" />
+              </span>
+            }
+            <span class="project-card__category">{{ project.category }}</span>
+            <span class="project-card__pattern" aria-hidden="true"></span>
+          </div>
+
+          <div class="project-card__body">
+            <h3>{{ project.title }}</h3>
+            <p class="project-card__description">{{ project.description }}</p>
+
+            <ul class="tag-list" aria-label="Tecnologías usadas">
+              @for (tag of project.tags; track tag) {
+                <li class="tag">{{ tag }}</li>
+              }
+            </ul>
+
+            <div class="project-card__links">
+              @if (project.demoUrl) {
+                <a
+                  class="link-arrow"
+                  [href]="project.demoUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  [attr.aria-label]="'Ver demo de ' + project.title"
+                >
+                  Ver proyecto
+                  <app-icon name="external-link" [size]="15" />
+                </a>
+              }
+
+              @for (link of project.links ?? []; track link.url) {
+                <a
+                  class="project-card__repo"
+                  [href]="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  [attr.aria-label]="'Ver ' + link.label + ' de ' + project.title"
+                  [attr.title]="link.label + ' de ' + project.title"
+                >
+                  <app-icon name="github" [size]="15" />
+                  <span>{{ link.label }}</span>
+                </a>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    @if (filtered().length === 0) {
+      <p class="projects__empty">Todavía no hay proyectos en esta categoría.</p>
+    }
+  </div>
+</section>

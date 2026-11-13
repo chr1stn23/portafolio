@@ -1,0 +1,38 @@
+<section id="servicios" class="section services" aria-labelledby="services-title">
+  <div class="container">
+    <app-section-heading
+      headingId="services-title"
+      [eyebrow]="section.eyebrow"
+      [title]="section.title"
+      [highlight]="section.highlight"
+      [subtitle]="section.subtitle"
+    />
+
+    <div class="services__grid">
+      @for (service of services; track service.title; let index = $index) {
+        <article class="service-card card card--interactive" appReveal [delay]="index * 60">
+          <span class="service-card__icon">
+            <app-icon [name]="service.icon" [size]="24" />
+          </span>
+
+          <h3>{{ service.title }}</h3>
+          <p class="service-card__description">{{ service.description }}</p>
+
+          <ul class="check-list check-list--compact service-card__features">
+            @for (feature of service.features; track feature) {
+              <li>
+                <app-icon name="check" [size]="14" />
+                <span>{{ feature }}</span>
+              </li>
+            }
+          </ul>
+
+          <a class="link-arrow" href="#contacto">
+            Saber más
+            <app-icon name="arrow-right" [size]="16" />
+          </a>
+        </article>
+      }
+    </div>
+  </div>
+</section>

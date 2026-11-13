@@ -1,0 +1,67 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <span class="brand__mark" aria-hidden="true">{{ profile.logo }}</span>
+          <span class="brand__name">{{ profile.name }}<span class="brand__dot">.</span></span>
+        </a>
+        <p>{{ profile.footerTagline }}</p>
+        <app-social-links label="Redes sociales en el pie de página" />
+      </div>
+
+      <nav class="site-footer__col" aria-labelledby="footer-nav-title">
+        <h3 id="footer-nav-title">Enlaces rápidos</h3>
+        <ul>
+          @for (link of navigation; track link.fragment) {
+            <li>
+              <a [href]="'#' + link.fragment">{{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <div class="site-footer__col">
+        <h3>Servicios</h3>
+        <ul>
+          @for (service of services; track service) {
+            <li>
+              <a href="#servicios">{{ service }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Contacto</h3>
+        <ul>
+          <li>
+            <a [href]="'mailto:' + profile.email">
+              <app-icon name="mail" [size]="15" />
+              {{ profile.email }}
+            </a>
+          </li>
+          <li>
+            <a [href]="'tel:' + profile.phone.replaceAll(' ', '')">
+              <app-icon name="phone" [size]="15" />
+              {{ profile.phone }}
+            </a>
+          </li>
+          <li>
+            <span class="site-footer__static">
+              <app-icon name="map-pin" [size]="15" />
+              {{ profile.location }}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>
+        © {{ year }} <strong>{{ profile.name }}.</strong> Todos los derechos reservados.
+      </p>
+      <p class="site-footer__made">Hecho con <span class="heart">♥</span> y Angular</p>
+    </div>
+  </div>
+</footer>

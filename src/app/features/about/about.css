@@ -1,0 +1,315 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: clamp(2.2rem, 5vw, 4.5rem);
+}
+
+/* Retrato / visual --------------------------------------------------------- */
+.about__visual {
+  position: relative;
+  padding-bottom: 2.5rem;
+  padding-right: 1.5rem;
+}
+
+.about__portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 4.6;
+  border-radius: 2rem;
+  border: 1px solid var(--border-strong);
+  background:
+    radial-gradient(120% 100% at 20% 0%, rgba(124, 108, 255, 0.35), transparent 55%),
+    radial-gradient(90% 90% at 100% 10%, rgba(46, 230, 197, 0.25), transparent 55%),
+    radial-gradient(80% 80% at 50% 100%, rgba(244, 114, 182, 0.28), transparent 60%),
+    var(--bg-elevated);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.about__portrait-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.35;
+  mask-image: radial-gradient(circle at 50% 50%, #000 20%, transparent 75%);
+}
+
+.about__portrait-ring {
+  position: absolute;
+  width: 78%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px dashed var(--border-strong);
+  animation: spin 40s linear infinite;
+}
+
+.about__monogram {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  user-select: none;
+}
+
+.about__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__badge {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--border-strong);
+  background: color-mix(in srgb, var(--bg-elevated) 92%, transparent);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.about__badge-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.about__badge-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.about__badge--a {
+  right: -0.25rem;
+  bottom: 0.9rem;
+  flex-direction: column;
+  gap: 0;
+  text-align: center;
+  padding: 0.8rem 1.15rem;
+}
+
+.about__badge--a .about__badge-value {
+  font-size: 1.3rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about__badge--b {
+  left: -1rem;
+  top: 1.5rem;
+}
+
+.about__badge-icon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+}
+
+/* Contenido --------------------------------------------------------------- */
+.about__content {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+.about__content app-section-heading {
+  width: 100%;
+}
+
+.about__text {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.about__highlights {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 1.25rem;
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.about__skills {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding: clamp(1.3rem, 3vw, 1.8rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.about__skills-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.about__skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem 2rem;
+}
+
+.skill {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.skill__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.skill__value {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--primary-strong);
+}
+
+.skill__bar {
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.skill__fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--gradient);
+  transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal--visible .skill__fill {
+  width: var(--level);
+}
+
+.skill__bar:hover .skill__fill {
+  filter: brightness(1.15);
+}
+
+.about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Métricas ---------------------------------------------------------------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.stat-card {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.stat-card__icon {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: 0.35rem;
+  border-radius: 0.8rem;
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+}
+
+.stat-card__value {
+  font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+}
+
+.stat-card__label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__visual {
+    max-width: 26rem;
+    width: 100%;
+    margin-inline: auto;
+    padding-right: 1rem;
+  }
+
+  .about__content {
+    justify-items: start;
+  }
+
+  .about__skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .about__highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about__badge--b {
+    left: -0.5rem;
+  }
+
+  .about__badge--a {
+    right: -0.5rem;
+  }
+
+  .about__skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

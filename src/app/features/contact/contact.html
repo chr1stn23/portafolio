@@ -1,0 +1,46 @@
+<section id="contacto" class="section contact" aria-labelledby="contact-title">
+  <div class="container contact__inner">
+    <app-section-heading
+      headingId="contact-title"
+      [eyebrow]="section.eyebrow"
+      [title]="section.title"
+      [highlight]="section.highlight"
+      [subtitle]="section.subtitle"
+      [compact]="true"
+    />
+
+    <p class="contact__text" appReveal>
+      Estoy abierto a oportunidades full-stack y a nuevos proyectos. Escríbeme por correo o
+      contáctame por LinkedIn: respondo normalmente en menos de 24 horas.
+    </p>
+
+    <ul class="contact__channels">
+      @for (channel of channels; track channel.label; let index = $index) {
+        <li class="contact__channel card" appReveal [delay]="index * 80">
+          <span class="contact__channel-icon">
+            <app-icon [name]="channel.icon" [size]="22" />
+          </span>
+
+          <span class="contact__channel-label">{{ channel.label }}</span>
+          <a [href]="channel.href">{{ channel.value }}</a>
+        </li>
+      }
+    </ul>
+
+    <div class="contact__actions" appReveal [delay]="120">
+      <a class="btn btn--primary" [href]="'mailto:' + profile.email">
+        Enviar correo
+        <app-icon name="send" [size]="16" />
+      </a>
+      <a class="btn btn--ghost" [href]="profile.cvUrl" download>
+        Descargar CV
+        <app-icon name="download" [size]="16" />
+      </a>
+    </div>
+
+    <div class="contact__social" appReveal [delay]="160">
+      <span class="contact__social-label">Sígueme en redes</span>
+      <app-social-links label="Redes sociales de contacto" />
+    </div>
+  </div>
+</section>
