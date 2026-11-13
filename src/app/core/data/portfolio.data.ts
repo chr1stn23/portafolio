@@ -39,10 +39,10 @@ export const PROFILE: Profile = {
   email: 'lvchristian20@gmail.com',
   phone: '+51 934 180 722',
   location: 'Lima, Perú',
-  /** Coloca tu CV en public/cv.pdf */
-  cvUrl: '/cv.pdf',
+  /** Coloca tu CV en public/cv.pdf (ruta relativa para funcionar en subdirectorios). */
+  cvUrl: 'cv.pdf',
   /** Tu foto está en public/images/perfil.jpg */
-  avatarUrl: '/images/perfil.jpg',
+  avatarUrl: 'images/perfil.jpg',
   bio: [
     'Ingeniero de Sistemas con 13 meses de experiencia profesional como desarrollador web full-stack (Node.js, Express y React), además de proyectos propios con Angular y Spring Boot.',
     'He construido una plataforma de mesa de ayuda probada de extremo a extremo con Playwright, accesible según WCAG AA y con CI/CD, y microservicios con Kafka y Keycloak. Me enfoco en el código limpio, la arquitectura mantenible y el trabajo en equipo con Scrum.',

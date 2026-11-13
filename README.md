@@ -148,10 +148,32 @@ Principios:
 
 ## Despliegue
 
-El build genera archivos estáticos en `dist/Portafolio/browser`. Puedes publicarlo en cualquier hosting estático:
+El build genera archivos estáticos en `dist/Portafolio/browser`.
+
+### GitHub Pages (automático)
+
+El repositorio incluye el workflow **`.github/workflows/deploy.yml`**, que compila y publica en cada push a `main`.
+
+1. Crea el repositorio en GitHub (por ejemplo `Portafolio`) y sube la rama `main`.
+2. En GitHub ve a **Settings → Pages → Build and deployment** y elige **Source: GitHub Actions**.
+3. Haz push a `main` (o ejecuta el workflow manualmente desde **Actions**).
+4. El sitio quedará en `https://<tu-usuario>.github.io/<nombre-del-repo>/`.
+
+El workflow calcula el `baseHref` automáticamente: usa `/<nombre-del-repo>/` para project pages y `/` si el repositorio se llama `<usuario>.github.io`. También puedes compilarlo a mano:
+
+```bash
+npm run build -- --base-href /Portafolio/
+```
+
+Notas:
+
+- El repositorio debe ser **público** para usar Pages en cuentas gratuitas.
+- La foto y el CV usan rutas relativas (`images/perfil.jpg`, `cv.pdf`) para funcionar dentro del subdirectorio del proyecto.
+- La navegación del sitio usa anclas (`#seccion`), así que no necesita fallback de SPA. Si más adelante agregas rutas reales, añade un `404.html` que redirija a `index.html`.
+
+### Otros hostings
 
 - **Netlify / Vercel:** build `npm run build`, carpeta de salida `dist/Portafolio/browser`.
-- **GitHub Pages:** publica el contenido de `dist/Portafolio/browser` (define `baseHref` si el sitio vive en un subdirectorio).
 - **Servidor propio:** sirve la carpeta con fallback de SPA hacia `index.html` para que funcionen las rutas del router.
 
 Antes de publicar, actualiza en `src/index.html` el título, la descripción y las etiquetas Open Graph cuando tengas dominio propio. En `portfolio.data.ts`, revisa los enlaces de los proyectos (`links`) y las URLs de tus redes sociales.
