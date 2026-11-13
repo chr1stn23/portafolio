@@ -69,7 +69,7 @@ Añade un objeto al arreglo `PROJECTS`:
   description: 'Descripción breve del proyecto.',
   tags: ['Angular', 'Node.js'],
   icon: 'globe',                // nombre válido de IconName
-  gradient: 'linear-gradient(135deg, #7c6cff 0%, #22d3ee 100%)',
+  coverColor: '#4ec9c0',       // color sólido de la portada
   demoUrl: 'https://demo.com',
   links: [
     { label: 'Frontend', url: 'https://github.com/usuario/repo-web' },

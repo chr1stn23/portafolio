@@ -205,7 +205,7 @@ export const PROJECTS: Project[] = [
       'Plataforma full-stack de mesa de ayuda y gestión de activos TI, con roles, auditoría, notificaciones y sesiones seguras.',
     tags: ['Angular 22', 'Spring Boot 4', 'PostgreSQL', 'Docker'],
     icon: 'layers',
-    gradient: 'linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%)',
+    coverColor: '#4ec9c0',
     links: [
       { label: 'Frontend', url: 'https://github.com/chr1stn23/support-hub-web' },
       { label: 'Backend', url: 'https://github.com/chr1stn23/support-hub-backend' },
@@ -219,7 +219,7 @@ export const PROJECTS: Project[] = [
       'Microservicios para la ingesta de telemetría IoT en tiempo real, con seguridad OAuth2 y persistencia en InfluxDB y MySQL.',
     tags: ['Spring Boot', 'Kafka', 'InfluxDB', 'Keycloak'],
     icon: 'zap',
-    gradient: 'linear-gradient(135deg, #7c6cff 0%, #f472b6 100%)',
+    coverColor: '#f0b03c',
     links: [{ label: 'Repositorio', url: 'https://github.com/chr1stn23/home-energy-tracker' }],
   },
   {
@@ -230,7 +230,7 @@ export const PROJECTS: Project[] = [
       'Aplicación móvil educativa para aprender primeros auxilios de forma didáctica, con lecciones interactivas y contenido de emergencia.',
     tags: ['Dart', 'Flutter', 'Mobile'],
     icon: 'smartphone',
-    gradient: 'linear-gradient(135deg, #22c55e 0%, #0ea5e9 100%)',
+    coverColor: '#ef7d92',
     links: [{ label: 'Repositorio', url: 'https://github.com/chr1stn23/auxilearn_app' }],
   },
 ];

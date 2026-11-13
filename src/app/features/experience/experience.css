@@ -1,27 +1,23 @@
 .timeline {
   position: relative;
   display: grid;
-  gap: 1.2rem;
+  gap: 1.4rem;
   max-width: 58rem;
   margin-inline: auto;
-  padding-left: 2rem;
+  padding-left: 2.25rem;
   list-style: none;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  top: 0.6rem;
-  bottom: 0.6rem;
+  top: 0.8rem;
+  bottom: 0.8rem;
   left: 0.75rem;
-  width: 2px;
-  border-radius: 999px;
-  background: linear-gradient(
-    180deg,
-    var(--primary),
-    color-mix(in srgb, var(--pink) 70%, transparent)
-  );
-  opacity: 0.55;
+  width: 0;
+  border-left: 3px dashed var(--border-strong);
+  background: none;
+  opacity: 1;
 }
 
 .timeline__item {
@@ -30,13 +26,14 @@
 
 .timeline__dot {
   position: absolute;
-  top: 1.65rem;
-  left: -1.6rem;
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 50%;
-  background: var(--gradient);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 16%, transparent);
+  top: 1.6rem;
+  left: -1.75rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 2px solid var(--border-strong);
+  border-radius: 0;
+  background: var(--primary);
+  box-shadow: 3px 3px 0 var(--shadow-color);
 }
 
 .timeline__card {
@@ -54,39 +51,41 @@
 }
 
 .timeline__head h3 {
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
+  font-size: 1.2rem;
+  letter-spacing: 0.01em;
 }
 
 .timeline__company {
-  margin-top: 0.25rem;
+  margin-top: 0.3rem;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
 }
 
 .timeline__period {
   flex-shrink: 0;
-  padding: 0.3rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
+  padding: 0.25rem 0.55rem;
+  border: 2px solid var(--border);
+  border-radius: 0;
+  background: var(--surface-strong);
   color: var(--text-soft);
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
+  font-weight: 500;
   letter-spacing: 0.01em;
+  line-height: 1.5;
 }
 
 .timeline__bullets {
   margin-top: 0.1rem;
   padding-top: 0.9rem;
-  border-top: 1px dashed var(--border);
+  border-top: 2px dashed var(--border);
 }
 
 .timeline__bullets li {
   align-items: flex-start;
   color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.7;
+  font-size: 0.85rem;
+  line-height: 1.75;
 }
 
 .timeline__bullets app-icon {
@@ -95,7 +94,7 @@
 
 @media (max-width: 620px) {
   .timeline {
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
   }
 
   .timeline::before {
@@ -104,12 +103,12 @@
 
   .timeline__dot {
     top: 1.35rem;
-    left: -1.4rem;
+    left: -1.55rem;
     width: 0.7rem;
     height: 0.7rem;
   }
 
   .timeline__period {
-    font-size: 0.68rem;
+    font-size: 0.64rem;
   }
 }

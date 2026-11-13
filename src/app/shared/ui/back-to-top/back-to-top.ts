@@ -35,24 +35,34 @@ import { Icon } from '../icon/icon';
       place-items: center;
       width: 2.9rem;
       height: 2.9rem;
-      border-radius: 50%;
-      border: 1px solid var(--border-strong);
+      border: 2px solid var(--border-strong);
+      border-radius: 0;
       background: var(--surface-strong);
+      box-shadow: var(--shadow-hard);
       color: var(--text);
-      backdrop-filter: blur(14px);
       cursor: pointer;
       opacity: 0;
       pointer-events: none;
       transform: translateY(12px);
       transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        background 0.2s ease;
+        opacity 0.2s steps(2, end),
+        transform 0.2s steps(2, end),
+        background 0.12s steps(2, end),
+        border-color 0.12s steps(2, end),
+        box-shadow 0.12s steps(2, end);
     }
 
     .back-to-top:hover {
       background: var(--primary);
-      color: #06080f;
+      border-color: var(--primary-strong);
+      color: var(--on-primary);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-hard-lg);
+    }
+
+    .back-to-top:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--shadow-color);
     }
 
     .back-to-top--visible {

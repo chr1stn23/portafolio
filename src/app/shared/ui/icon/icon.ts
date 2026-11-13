@@ -284,9 +284,9 @@ export type IconName = keyof typeof ICONS;
       [attr.viewBox]="icon().viewBox"
       fill="none"
       stroke="currentColor"
-      [attr.stroke-width]="icon().strokeWidth ?? 1.8"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      [attr.stroke-width]="icon().strokeWidth ?? 2"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
       aria-hidden="true"
       focusable="false"
     >

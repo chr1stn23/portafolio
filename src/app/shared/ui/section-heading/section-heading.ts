@@ -14,7 +14,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
       <h2 class="section-title" [attr.id]="headingId() || null">
         {{ title() }}
         @if (highlight()) {
-          <span class="gradient-text">{{ highlight() }}</span>
+          <span class="highlight-text">{{ highlight() }}</span>
         }
       </h2>
       @if (subtitle()) {

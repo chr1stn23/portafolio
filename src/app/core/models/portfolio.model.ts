@@ -51,8 +51,8 @@ export interface Project {
   description: string;
   tags: string[];
   icon: IconName;
-  /** Gradiente CSS usado como portada cuando no hay imagen. */
-  gradient: string;
+  /** Color sólido usado como portada cuando no hay imagen. */
+  coverColor: string;
   /** Imagen opcional en /public/images. */
   image?: string;
   demoUrl?: string;
