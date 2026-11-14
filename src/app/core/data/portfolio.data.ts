@@ -27,15 +27,11 @@ export const PROFILE: Profile = {
   name: 'Christian Lara',
   logo: 'CL',
   role: 'Ingeniero de Sistemas & Desarrollador Full-Stack',
-  availability: 'Disponible para oportunidades Full-Stack',
-  heroRoles: [
-    'Desarrollador Full-Stack',
-    'Ingeniero de Sistemas',
-    'Angular · Spring Boot · Node.js',
-  ],
+  availability: 'Disponible para oportunidades Full-Stack con Java',
+  heroRoles: ['Desarrollador Full-Stack', 'Ingeniero de Sistemas', 'Spring Boot · Java · Angular'],
   heroDescription:
-    'Ingeniero de Sistemas con experiencia construyendo aplicaciones web full-stack. Trabajo con Angular, Spring Boot y Node.js, cuidando la calidad, la accesibilidad y la entrega continua.',
-  heroStack: ['Angular', 'TypeScript', 'Spring Boot', 'Node.js', 'PostgreSQL', 'Docker'],
+    'Ingeniero de Sistemas con experiencia construyendo aplicaciones web full-stack. Trabajo con Java y Spring Boot en el backend y Angular en el frontend, cuidando la calidad, la accesibilidad y la entrega continua.',
+  heroStack: ['Spring Boot', 'Java', 'Angular', 'TypeScript', 'Node.js', 'PostgreSQL'],
   email: 'lvchristian20@gmail.com',
   phone: '+51 934 180 722',
   location: 'Lima, Perú',
@@ -133,12 +129,12 @@ export const STATS: Stat[] = [
 
 /** Habilidades con nivel de dominio (0-100). */
 export const SKILLS: Skill[] = [
-  { name: 'Angular & TypeScript', level: 90 },
-  { name: 'Node.js & Express', level: 86 },
-  { name: 'Java & Spring Boot', level: 82 },
-  { name: 'PostgreSQL & MySQL', level: 84 },
-  { name: 'Docker & CI/CD', level: 78 },
-  { name: 'Testing & accesibilidad', level: 80 },
+  { name: 'Java & Spring Boot', level: 80 },
+  { name: 'Node.js & Express', level: 76 },
+  { name: 'Angular & TypeScript', level: 72 },
+  { name: 'PostgreSQL & MySQL', level: 74 },
+  { name: 'Docker & CI/CD', level: 68 },
+  { name: 'Testing & accesibilidad', level: 70 },
 ];
 
 /** Servicios o áreas de especialización. */

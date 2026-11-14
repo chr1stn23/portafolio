@@ -67,16 +67,17 @@
             <span class="dot dot--red" aria-hidden="true"></span>
             <span class="dot dot--yellow" aria-hidden="true"></span>
             <span class="dot dot--green" aria-hidden="true"></span>
-            <code>desarrollador.ts</code>
+            <code>Developer.java</code>
           </header>
 
           <pre
             class="hero__code"
-          ><code><span class="c-key">const</span> <span class="c-var">developer</span> <span class="c-op">=</span> <span class="c-punc">{{ '{' }}</span>
-  <span class="c-prop">nombre</span>: <span class="c-str">'{{ profile.name }}'</span>,
-  <span class="c-prop">rol</span>: <span class="c-str">'Full-Stack'</span>,
-  <span class="c-prop">stack</span>: [<span class="c-str">'Angular'</span>, <span class="c-str">'Spring Boot'</span>],
-  <span class="c-prop">pasión</span>: <span class="c-num">Infinity</span>,
+          ><code><span class="c-key">public class</span> <span class="c-var">Developer</span> <span class="c-punc">{{ '{' }}</span>
+  <span class="c-key">String</span> <span class="c-prop">name</span> <span class="c-op">=</span> <span class="c-str">"{{ profile.name }}"</span>;
+  <span class="c-key">String</span> <span class="c-prop">role</span> <span class="c-op">=</span> <span class="c-str">"Full-Stack"</span>;
+  <span class="c-key">List&lt;String&gt;</span> <span class="c-prop">stack</span> <span class="c-op">=</span> <span class="c-var">List</span>.<span class="c-prop">of</span>(
+    <span class="c-str">"Spring Boot"</span>, <span class="c-str">"Angular"</span>);
+  <span class="c-key">double</span> <span class="c-prop">passion</span> <span class="c-op">=</span> <span class="c-var">Double</span>.<span class="c-prop">POSITIVE_INFINITY</span>;
 <span class="c-punc">{{ '}' }}</span></code></pre>
 
           <footer class="hero__card-footer">
@@ -94,7 +95,7 @@
           </span>
           <div>
             <strong>Full-Stack</strong>
-            <span>Angular + Spring Boot</span>
+            <span>Spring Boot + Angular</span>
           </div>
         </div>
 
@@ -104,7 +105,7 @@
           </span>
           <div>
             <strong>97%</strong>
-            <span>Cobertura frontend</span>
+            <span>Cobertura de pruebas</span>
           </div>
         </div>
       </div>
