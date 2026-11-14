@@ -56,19 +56,6 @@
   opacity: 0.6;
 }
 
-.about__portrait-ring {
-  position: absolute;
-  top: 0.85rem;
-  right: 0.85rem;
-  z-index: 3;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 3px solid var(--accent);
-  border-radius: 0;
-  background: transparent;
-  animation: none;
-}
-
 .about__monogram {
   position: relative;
   z-index: 1;
