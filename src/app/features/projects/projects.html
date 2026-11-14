@@ -1,4 +1,4 @@
-<section id="proyectos" class="section projects" aria-labelledby="projects-title">
+<section id="proyectos" class="section projects tone-coral" aria-labelledby="projects-title">
   <div class="container">
     <app-section-heading
       headingId="projects-title"
@@ -23,7 +23,7 @@
       }
     </div>
 
-    <div class="projects__grid">
+    <div class="projects__grid tone-cycle">
       @for (project of filtered(); track project.id; let index = $index) {
         <article class="project-card card card--interactive" appReveal [delay]="index * 60">
           <div class="project-card__cover" [style.background]="project.coverColor">

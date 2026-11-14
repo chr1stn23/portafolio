@@ -125,6 +125,10 @@
   box-shadow: 4px 4px 0 var(--cover-ink);
 }
 
+.project-card.card--interactive:hover {
+  border-color: var(--tone);
+}
+
 .project-card__image {
   position: absolute;
   inset: 0;
@@ -209,9 +213,9 @@
 }
 
 .project-card__repo:hover {
-  color: var(--on-primary);
-  background: var(--primary);
-  border-color: var(--primary-strong);
+  color: var(--on-tone);
+  background: var(--tone);
+  border-color: var(--tone-ink);
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0 var(--shadow-color);
 }

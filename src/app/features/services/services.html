@@ -1,4 +1,4 @@
-<section id="servicios" class="section services" aria-labelledby="services-title">
+<section id="servicios" class="section services tone-violet" aria-labelledby="services-title">
   <div class="container">
     <app-section-heading
       headingId="services-title"
@@ -8,7 +8,7 @@
       [subtitle]="section.subtitle"
     />
 
-    <div class="services__grid">
+    <div class="services__grid tone-cycle">
       @for (service of services; track service.title; let index = $index) {
         <article class="service-card card card--interactive" appReveal [delay]="index * 60">
           <span class="service-card__icon">

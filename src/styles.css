@@ -28,15 +28,47 @@
   --text-soft: #d9d4c7;
   --muted: #aaa494;
 
-  --primary: #63e6a6;
-  --primary-strong: #8dffc4;
-  --primary-soft: #123027;
-  --accent: #ffc857;
-  --accent-soft: #3a2c0c;
+  /* Verde: color principal del sitio. */
+  --mint: #63e6a6;
+  --mint-ink: #8dffc4;
+  --mint-soft: #123027;
+
+  --primary: var(--mint);
+  --primary-strong: var(--mint-ink);
+  --primary-soft: var(--mint-soft);
+
+  /* Tonos de apoyo: misma familia pastel, distinto matiz. */
+  --teal: #4ec9c0;
+  --teal-ink: #7fe8e0;
+  --teal-soft: #0d2b2a;
+
+  --sky: #6fb2ff;
+  --sky-ink: #a5cdff;
+  --sky-soft: #10223a;
+
+  --violet: #b79ae8;
+  --violet-ink: #d6c6f7;
+  --violet-soft: #1e1733;
+
+  --amber: #ffc857;
+  --amber-ink: #ffd88a;
+  --amber-soft: #3a2c0c;
+
   --coral: #ff8fa3;
+  --coral-ink: #ffb8c5;
+  --coral-soft: #3a1620;
+
+  --accent: var(--amber);
+  --accent-soft: var(--amber-soft);
   --pink: var(--coral);
   --on-primary: #08130d;
+  --on-tone: #0b0b12;
   --on-accent: #1a1204;
+
+  /* Tono activo; se sobreescribe con .tone-* o .tone-cycle. */
+  --tone: var(--mint);
+  --tone-ink: var(--mint-ink);
+  --tone-soft: var(--mint-soft);
 
   --shadow-color: #000000;
   --shadow-hard: 4px 4px 0 var(--shadow-color);
@@ -56,6 +88,9 @@
   --radius-lg: 0;
   --container: 1160px;
   --header-h: 76px;
+
+  /* Lo inyecta appReveal en cada elemento; aquí queda el valor por defecto. */
+  --reveal-delay: 0ms;
 }
 
 :root[data-theme='light'] {
@@ -73,15 +108,44 @@
   --text-soft: #2c2c33;
   --muted: #57534a;
 
-  --primary: #0b6b4f;
-  --primary-strong: #07503a;
-  --primary-soft: #d7e7db;
-  --accent: #8a4b00;
-  --accent-soft: #f1e0b9;
+  --mint: #0b6b4f;
+  --mint-ink: #07503a;
+  --mint-soft: #d7e7db;
+
+  --primary: var(--mint);
+  --primary-strong: var(--mint-ink);
+  --primary-soft: var(--mint-soft);
+
+  --teal: #0c6661;
+  --teal-ink: #084b47;
+  --teal-soft: #d2e7e5;
+
+  --sky: #1f5b9c;
+  --sky-ink: #143f6c;
+  --sky-soft: #d7e4f2;
+
+  --violet: #5a3d9e;
+  --violet-ink: #41297a;
+  --violet-soft: #e3dbf3;
+
+  --amber: #8a4b00;
+  --amber-ink: #6b3a00;
+  --amber-soft: #f1e0b9;
+
   --coral: #a32348;
+  --coral-ink: #7c1a36;
+  --coral-soft: #f2dae1;
+
+  --accent: var(--amber);
+  --accent-soft: var(--amber-soft);
   --pink: var(--coral);
   --on-primary: #fdfcf7;
+  --on-tone: #fdfcf7;
   --on-accent: #fdfcf7;
+
+  --tone: var(--mint);
+  --tone-ink: var(--mint-ink);
+  --tone-soft: var(--mint-soft);
 
   --shadow-color: #14141a;
   --shadow-hard: 4px 4px 0 var(--shadow-color);
@@ -89,6 +153,80 @@
   --shadow-hard-lg: 6px 6px 0 var(--shadow-color);
 
   --grid-line: rgba(20, 20, 26, 0.07);
+}
+
+/* Tonos: se aplican con .tone-* en una sección o con .tone-cycle en una lista. */
+.tone-mint {
+  --tone: var(--mint);
+  --tone-ink: var(--mint-ink);
+  --tone-soft: var(--mint-soft);
+}
+
+.tone-teal {
+  --tone: var(--teal);
+  --tone-ink: var(--teal-ink);
+  --tone-soft: var(--teal-soft);
+}
+
+.tone-sky {
+  --tone: var(--sky);
+  --tone-ink: var(--sky-ink);
+  --tone-soft: var(--sky-soft);
+}
+
+.tone-violet {
+  --tone: var(--violet);
+  --tone-ink: var(--violet-ink);
+  --tone-soft: var(--violet-soft);
+}
+
+.tone-amber {
+  --tone: var(--amber);
+  --tone-ink: var(--amber-ink);
+  --tone-soft: var(--amber-soft);
+}
+
+.tone-coral {
+  --tone: var(--coral);
+  --tone-ink: var(--coral-ink);
+  --tone-soft: var(--coral-soft);
+}
+
+/* Rotación de tonos: cada hijo directo recibe un color distinto. */
+.tone-cycle > :nth-child(6n + 1) {
+  --tone: var(--mint);
+  --tone-ink: var(--mint-ink);
+  --tone-soft: var(--mint-soft);
+}
+
+.tone-cycle > :nth-child(6n + 2) {
+  --tone: var(--teal);
+  --tone-ink: var(--teal-ink);
+  --tone-soft: var(--teal-soft);
+}
+
+.tone-cycle > :nth-child(6n + 3) {
+  --tone: var(--sky);
+  --tone-ink: var(--sky-ink);
+  --tone-soft: var(--sky-soft);
+}
+
+.tone-cycle > :nth-child(6n + 4) {
+  --tone: var(--violet);
+  --tone-ink: var(--violet-ink);
+  --tone-soft: var(--violet-soft);
+}
+
+.tone-cycle > :nth-child(6n + 5) {
+  --tone: var(--amber);
+  --tone-ink: var(--amber-ink);
+  --tone-soft: var(--amber-soft);
+}
+
+.tone-cycle > :nth-child(6n + 6) {
+  --tone: var(--coral);
+  --tone-ink: var(--coral-ink);
+  --tone-soft: var(--coral-soft);
 }
 
 /* 2. RESET Y BASE ---------------------------------------------------------- */
@@ -244,10 +382,10 @@ ol {
   align-items: center;
   gap: 0.6rem;
   padding: 0.55rem 0.8rem;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--tone);
   border-radius: 0;
-  background: var(--primary-soft);
-  color: var(--primary-strong);
+  background: var(--tone-soft);
+  color: var(--tone-ink);
   font-family: var(--font-pixel);
   font-size: 0.56rem;
   font-weight: 400;
@@ -262,7 +400,7 @@ ol {
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 0;
-  background: var(--primary);
+  background: var(--tone);
 }
 
 .section-heading {
@@ -486,10 +624,10 @@ ol {
 
 .tag {
   padding: 0.2rem 0.55rem;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--tone);
   border-radius: 0;
-  background: var(--primary-soft);
-  color: var(--primary-strong);
+  background: var(--tone-soft);
+  color: var(--tone-ink);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 700;
@@ -514,7 +652,7 @@ ol {
 .check-list app-icon {
   flex-shrink: 0;
   margin-top: 0.25rem;
-  color: var(--primary);
+  color: var(--tone);
 }
 
 .check-list--compact li {
@@ -554,6 +692,25 @@ ol {
   border-color: var(--primary-strong);
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-hard);
+}
+
+/* Cada red toma su propio tono al pasar el cursor. */
+.social-links li:nth-child(1) a:hover {
+  background: var(--violet);
+  border-color: var(--violet-ink);
+  color: var(--on-tone);
+}
+
+.social-links li:nth-child(2) a:hover {
+  background: var(--sky);
+  border-color: var(--sky-ink);
+  color: var(--on-tone);
+}
+
+.social-links li:nth-child(3) a:hover {
+  background: var(--coral);
+  border-color: var(--coral-ink);
+  color: var(--on-tone);
 }
 
 .social-links a:active {

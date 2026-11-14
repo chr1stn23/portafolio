@@ -1,4 +1,4 @@
-<section id="sobre-mi" class="section about" aria-labelledby="about-title">
+<section id="sobre-mi" class="section about tone-teal" aria-labelledby="about-title">
   <div class="container">
     <div class="about__grid">
       <div class="about__visual" appReveal>
@@ -71,7 +71,7 @@
     <div class="about__skills" appReveal role="group" aria-labelledby="about-skills-title">
       <h3 class="about__skills-title" id="about-skills-title">Stack y nivel de dominio</h3>
 
-      <div class="about__skills-grid">
+      <div class="about__skills-grid tone-cycle">
         @for (skill of skills; track skill.name) {
           <div class="skill">
             <div class="skill__head">
@@ -93,7 +93,7 @@
       </div>
     </div>
 
-    <div class="stats-grid" appReveal>
+    <div class="stats-grid tone-cycle" appReveal>
       @for (stat of stats; track stat.label) {
         <article class="stat-card card">
           <span class="stat-card__icon">

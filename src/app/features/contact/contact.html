@@ -1,4 +1,4 @@
-<section id="contacto" class="section contact" aria-labelledby="contact-title">
+<section id="contacto" class="section contact tone-mint" aria-labelledby="contact-title">
   <div class="container contact__inner">
     <app-section-heading
       headingId="contact-title"
@@ -14,7 +14,7 @@
       contáctame por LinkedIn: respondo normalmente en menos de 24 horas.
     </p>
 
-    <ul class="contact__channels">
+    <ul class="contact__channels tone-cycle">
       @for (channel of channels; track channel.label; let index = $index) {
         <li class="contact__channel card" appReveal [delay]="index * 80">
           <span class="contact__channel-icon">

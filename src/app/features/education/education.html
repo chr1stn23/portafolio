@@ -1,4 +1,4 @@
-<section id="formacion" class="section education" aria-labelledby="education-title">
+<section id="formacion" class="section education tone-sky" aria-labelledby="education-title">
   <div class="container">
     <app-section-heading
       headingId="education-title"
@@ -9,7 +9,7 @@
     />
 
     <div class="education__grid">
-      <div class="education__column">
+      <div class="education__column tone-cycle">
         @for (item of education; track item.degree; let index = $index) {
           <article class="education-card card" appReveal [delay]="index * 80">
             <span class="education-card__icon" aria-hidden="true">
@@ -47,7 +47,7 @@
       <div class="education__column">
         <h3 class="education__subtitle" id="certifications-title">Certificaciones</h3>
 
-        <ul class="cert-list" aria-labelledby="certifications-title">
+        <ul class="cert-list tone-cycle" aria-labelledby="certifications-title">
           @for (cert of certifications; track cert.title; let index = $index) {
             <li class="cert-item card" appReveal [delay]="index * 70">
               <span class="cert-item__icon" aria-hidden="true">

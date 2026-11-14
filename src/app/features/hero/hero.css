@@ -137,9 +137,23 @@
 }
 
 .hero__mini-stat {
+  --counter-color: var(--tone);
   display: grid;
   gap: 0.15rem;
   font-size: 1.35rem;
+}
+
+/* Dos acentos distintos para las métricas del inicio. */
+.hero__mini-stats > :nth-child(1) {
+  --tone: var(--mint);
+  --tone-ink: var(--mint-ink);
+  --tone-soft: var(--mint-soft);
+}
+
+.hero__mini-stats > :nth-child(2) {
+  --tone: var(--amber);
+  --tone-ink: var(--amber-ink);
+  --tone-soft: var(--amber-soft);
 }
 
 .hero__mini-stat span:last-child {

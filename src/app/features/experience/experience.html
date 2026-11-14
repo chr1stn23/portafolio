@@ -1,4 +1,4 @@
-<section id="experiencia" class="section experience" aria-labelledby="experience-title">
+<section id="experiencia" class="section experience tone-amber" aria-labelledby="experience-title">
   <div class="container">
     <app-section-heading
       headingId="experience-title"
@@ -8,7 +8,7 @@
       [subtitle]="section.subtitle"
     />
 
-    <ol class="timeline">
+    <ol class="timeline tone-cycle">
       @for (job of experience; track job.company; let index = $index) {
         <li class="timeline__item" appReveal [delay]="index * 100">
           <span class="timeline__dot" aria-hidden="true"></span>

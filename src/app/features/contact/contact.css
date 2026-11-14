@@ -44,7 +44,7 @@
 }
 
 .contact__channel:hover {
-  border-color: var(--primary);
+  border-color: var(--tone);
   background: var(--bg-elevated);
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-hard-lg);
@@ -56,10 +56,10 @@
   width: 3rem;
   height: 3rem;
   margin-bottom: 0.45rem;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--tone);
   border-radius: 0;
-  background: var(--primary-soft);
-  color: var(--primary-strong);
+  background: var(--tone-soft);
+  color: var(--tone-ink);
 }
 
 .contact__channel-label {

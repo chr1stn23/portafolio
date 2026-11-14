@@ -17,7 +17,7 @@
   position: absolute;
   inset: 0 0 auto 0;
   height: 4px;
-  background: var(--primary);
+  background: var(--tone);
   opacity: 0;
   transition: opacity 0.15s steps(2, end);
 }
@@ -32,10 +32,10 @@
   width: 3rem;
   height: 3rem;
   margin-bottom: 0.35rem;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--tone);
   border-radius: 0;
-  background: var(--primary-soft);
-  color: var(--primary-strong);
+  background: var(--tone-soft);
+  color: var(--tone-ink);
   transition:
     background 0.15s steps(2, end),
     color 0.15s steps(2, end),
@@ -44,9 +44,9 @@
 }
 
 .service-card:hover .service-card__icon {
-  background: var(--primary);
-  border-color: var(--primary-strong);
-  color: var(--on-primary);
+  background: var(--tone);
+  border-color: var(--tone-ink);
+  color: var(--on-tone);
   transform: translateY(-3px);
 }
 
@@ -69,6 +69,11 @@
 
 .service-card .link-arrow {
   margin-top: auto;
+  color: var(--tone-ink);
+}
+
+.service-card .link-arrow:hover {
+  color: var(--tone);
 }
 
 @media (max-width: 1024px) {

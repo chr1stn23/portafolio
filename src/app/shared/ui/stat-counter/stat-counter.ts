@@ -26,7 +26,7 @@ import { prefersReducedMotion } from '../../../core/utils/motion';
       font-family: var(--font-display);
       font-weight: 700;
       line-height: 1;
-      color: var(--text);
+      color: var(--counter-color, var(--text));
       font-variant-numeric: tabular-nums;
     }
 
@@ -35,7 +35,7 @@ import { prefersReducedMotion } from '../../../core/utils/motion';
     }
 
     :host .stat-counter__suffix {
-      color: var(--primary);
+      color: var(--tone);
     }
   `,
 })
